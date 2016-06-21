@@ -33,7 +33,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.Done
         
-        initAudio()
+        // initAudio()
         parsePokemonCSV()
         
     }
