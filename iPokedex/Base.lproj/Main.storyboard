@@ -181,6 +181,9 @@
                                             <constraint firstAttribute="height" constant="23" id="yN7-le-pt3"/>
                                         </constraints>
                                         <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="niN-3a-uu7" eventType="touchUpInside" id="O8T-0u-3jt"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -371,7 +374,18 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="baseAttackLabel" destination="9sj-eo-LqP" id="bK4-F9-m05"/>
+                        <outlet property="currentEvoImage" destination="nYr-ne-I6T" id="sNV-l4-PTG"/>
+                        <outlet property="defenseLabel" destination="f0v-ky-tSf" id="AVn-4a-1H3"/>
+                        <outlet property="descriptionLabel" destination="UN4-yA-buZ" id="Fb5-DQ-7UP"/>
+                        <outlet property="evoLabel" destination="fUc-3x-rlo" id="rJS-kz-bmA"/>
+                        <outlet property="heightLabel" destination="VP4-ep-jfT" id="BtY-JI-L4q"/>
+                        <outlet property="mainImage" destination="CTT-ma-hgL" id="43E-ix-6hF"/>
                         <outlet property="nameLabel" destination="FEf-sr-V5U" id="jdK-Fu-RDn"/>
+                        <outlet property="nextEvoImage" destination="Vji-25-3Oy" id="VSk-hX-3c7"/>
+                        <outlet property="pokedexLabel" destination="94X-LV-rul" id="GvY-Pv-VBl"/>
+                        <outlet property="typeLabel" destination="bMA-la-blO" id="RdM-IC-P2R"/>
+                        <outlet property="weightLabel" destination="ZTh-p1-ElH" id="0nJ-hL-TjS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6e7-iI-U0m" userLabel="First Responder" sceneMemberID="firstResponder"/>
