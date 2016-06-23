@@ -34,7 +34,11 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         nameLabel.text = pokemon.name.capitalizedString
+        mainImage.image = UIImage(named: "\(pokemon.pokedexId)")
         
+        pokemon.downloadPokemonDetails { 
+            
+        }
 
     }
     

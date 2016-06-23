@@ -20,6 +20,7 @@
 		CF2E5D4B1D10930D00AB3E60 /* pokemon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CF2E5D4A1D10930D00AB3E60 /* pokemon.ttf */; };
 		CF2E5D4D1D10989F00AB3E60 /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF2E5D4C1D10989F00AB3E60 /* music.mp3 */; };
 		CF5AA7531D19D0B800E95B6A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5AA7521D19D0B800E95B6A /* DetailViewController.swift */; };
+		CF5AA7551D1C733000E95B6A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5AA7541D1C733000E95B6A /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		CF2E5D4A1D10930D00AB3E60 /* pokemon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pokemon.ttf; sourceTree = "<group>"; };
 		CF2E5D4C1D10989F00AB3E60 /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
 		CF5AA7521D19D0B800E95B6A /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		CF5AA7541D1C733000E95B6A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				CF2E5D481D0F932000AB3E60 /* csv.swift */,
+				CF5AA7541D1C733000E95B6A /* Constants.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				CF2E5D2E1D0F4BD400AB3E60 /* ViewController.swift in Sources */,
 				CF2E5D2C1D0F4BD400AB3E60 /* AppDelegate.swift in Sources */,
 				CF5AA7531D19D0B800E95B6A /* DetailViewController.swift in Sources */,
+				CF5AA7551D1C733000E95B6A /* Constants.swift in Sources */,
 				CF2E5D411D0F614400AB3E60 /* Pokemon.swift in Sources */,
 				CF2E5D491D0F932000AB3E60 /* csv.swift in Sources */,
 			);
