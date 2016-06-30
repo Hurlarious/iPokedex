@@ -34,12 +34,50 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         nameLabel.text = pokemon.name.capitalizedString
-        mainImage.image = UIImage(named: "\(pokemon.pokedexId)")
+        let img = UIImage(named: "\(pokemon.pokedexId)")
+        mainImage.image = img
+        currentEvoImage.image = img
         
-        pokemon.downloadPokemonDetails { 
+        // called after network request if completed
+        pokemon.downloadPokemonDetails {
             
+            self.updateUI()
         }
 
+    }
+    
+    // MARK: - Functions
+    
+    func updateUI() {
+        
+        descriptionLabel.text = pokemon.description
+        typeLabel.text = pokemon.type
+        defenseLabel.text = pokemon.defense
+        heightLabel.text = pokemon.height
+        weightLabel.text = pokemon.weight
+        pokedexLabel.text = "\(pokemon.pokedexId)"
+        baseAttackLabel.text = pokemon.attack
+        
+        if pokemon.nextEvoId == "" {
+            
+            evoLabel.text = "No Evolutions"
+            nextEvoImage.hidden = true
+            
+        } else {
+            
+            nextEvoImage.hidden = false
+            nextEvoImage.image = UIImage(named: pokemon.nextEvoId)
+            var evoString = "Next Evolution: \(pokemon.nextEvoText)"
+            
+            if pokemon.nextEvoLevel != "" {
+                evoString += " - Level \(pokemon.nextEvoLevel)"
+            }
+            
+            evoLabel.text = evoString
+        }
+            
+        
+        
     }
     
     // MARK: - Actions
