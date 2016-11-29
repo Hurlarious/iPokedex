@@ -11,18 +11,18 @@ import Alamofire
 
 class Pokemon {
     
-    private var _name: String!
-    private var _pokedexId: Int!
-    private var _description: String!
-    private var _type: String!
-    private var _defense: String!
-    private var _height: String!
-    private var _weight: String!
-    private var _attack: String!
-    private var _nextEvoText: String!
-    private var _nextEvoID: String!
-    private var _nextEvoLevel: String!
-    private var _pokemonURL: String!
+    fileprivate var _name: String!
+    fileprivate var _pokedexId: Int!
+    fileprivate var _description: String!
+    fileprivate var _type: String!
+    fileprivate var _defense: String!
+    fileprivate var _height: String!
+    fileprivate var _weight: String!
+    fileprivate var _attack: String!
+    fileprivate var _nextEvoText: String!
+    fileprivate var _nextEvoID: String!
+    fileprivate var _nextEvoLevel: String!
+    fileprivate var _pokemonURL: String!
     
     var description: String {
         if _description == nil {
@@ -103,10 +103,10 @@ class Pokemon {
     }
     
     
-    func downloadPokemonDetails(completed: DownloadComplete) {
+    func downloadPokemonDetails(_ completed: @escaping DownloadComplete) {
         
-        let url = NSURL(string: _pokemonURL)!
-        Alamofire.request(.GET, url).responseJSON { response in
+        let url = URL(string: _pokemonURL)!
+        Alamofire.request(url).responseJSON { response in
             
             let result = response.result
 
@@ -128,22 +128,17 @@ class Pokemon {
                     self._defense = "\(defense)"
                 }
                 
-                print(self._weight)
-                print(self._height)
-                print(self._attack)
-                print(self._defense)
-                
-                if let types = dict["types"] as? [Dictionary<String, String>] where types.count > 0 {
+                if let types = dict["types"] as? [Dictionary<String, String>], types.count > 0 {
                     
                     if let name = types[0]["name"] {
-                        self._type = name.capitalizedString
+                        self._type = name.capitalized
                     }
                     
                     if types.count > 1 {
                         
                         for i in 1 ..< types.count {
                             if let name = types[i]["name"] {
-                                self._type! += "/\(name.capitalizedString)"
+                                self._type! += "/\(name.capitalized)"
                             }
                         }
                     }
@@ -154,12 +149,12 @@ class Pokemon {
                 
                 print(self._type)
                 
-                if let descriptionArray = dict["descriptions"] as? [Dictionary<String, String>] where descriptionArray.count > 0 {
+                if let descriptionArray = dict["descriptions"] as? [Dictionary<String, String>], descriptionArray.count > 0 {
                     
                     if let url = descriptionArray[0]["resource_uri"] {
                         
-                        let nsurl = NSURL(string: "\(URL_BASE)\(url)")!
-                        Alamofire.request(.GET, nsurl).responseJSON { response in
+                        let nsurl = URL(string: "\(URL_BASE)\(url)")!
+                        Alamofire.request(nsurl).responseJSON { response in
                             
                             let descriptionResult = response.result
                             
@@ -179,19 +174,19 @@ class Pokemon {
                     self._description = ""
                 }
                 
-                if let evolutions = dict["evolutions"] as? [Dictionary<String, AnyObject>] where evolutions.count > 0 {
+                if let evolutions = dict["evolutions"] as? [Dictionary<String, AnyObject>], evolutions.count > 0 {
                     
                     if let to = evolutions[0]["to"] as? String {
                         
                         // cant support mega pokemon just yet
                         // api still has mega data
                         
-                        if to.rangeOfString("mega") == nil {
+                        if to.range(of: "mega") == nil {
                             
                             if let uri = evolutions[0]["resource_uri"] as? String {
                                 
-                                let firstPart = uri.stringByReplacingOccurrencesOfString("/api/v1/pokemon/", withString: "")
-                                let parsedID = firstPart.stringByReplacingOccurrencesOfString("/", withString: "")
+                                let firstPart = uri.replacingOccurrences(of: "/api/v1/pokemon/", with: "")
+                                let parsedID = firstPart.replacingOccurrences(of: "/", with: "")
                                 
                                 if let lvl = evolutions[0]["level"] as? Int {
                                     self._nextEvoLevel = "\(lvl)"

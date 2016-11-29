@@ -4,6 +4,6 @@ platform :ios, '9.0'
 use_frameworks!
 
 target 'iPokedex' do
-    pod 'Alamofire', '~> 3.4'
+    pod 'Alamofire', '~> 4.0'
 end
 
