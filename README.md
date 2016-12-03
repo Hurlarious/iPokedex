@@ -1,5 +1,5 @@
 # iPokedex
-I tried to make a simple pokedex when I heard PokemonGO was gonna be a thing, but then 52348 appeared in the app store almost overnight so I stopped 
+I tried to make a simple pokedex when I heard PokemonGO was gonna be a thing, but then 52348 appeared in the app store almost overnight so I stopped. ** I only decided to update it to swift 3 so I could see/experiment with some of the changes.
 
 #### Features
 
